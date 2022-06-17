@@ -10,7 +10,7 @@ function CCard (props){
      } 
   const cnum=(e)=>{
     setCardNum(e.target.value);
-    }  
+    }   
     // 驗證可能會出錯 先取消
   // const date=(e)=>{
   //   setCDate(e.target.value);
