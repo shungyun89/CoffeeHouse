@@ -8,12 +8,12 @@ const MenuCard = (props) => {
 
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
     
-    const thisURL=window.location.href
+    const thisURL=window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
 
 
-    if(thisURL=='https://coffee-house-46uj0eu28-shungyun89.vercel.app/onlinemenu'){
+    if(thisURL=='onlinemenu'){
     return(
         <>
             {/* 印出資料 */}
@@ -63,7 +63,7 @@ const MenuCard = (props) => {
             })}
         </>   
     )  
-}else if(thisURL=='https://coffee-house-46uj0eu28-shungyun89.vercel.app/favorite'){
+}else if(thisURL=='favorite'){
     return(
         <>
             {/* 印出資料 */}
@@ -113,7 +113,7 @@ const MenuCard = (props) => {
             })}
         </>   
     )  
-}else if(thisURL=='https://coffee-house-46uj0eu28-shungyun89.vercel.app/MenuTypeToday'){
+}else if(thisURL=='MenuTypeToday'){
     return(
         <>
             {/* 印出資料 */}
@@ -166,7 +166,7 @@ const MenuCard = (props) => {
 
 
 
-}else if(thisURL=='https://coffee-house-46uj0eu28-shungyun89.vercel.app/MenuTypeIce'){
+}else if(thisURL=='MenuTypeIce'){
     return(
         <>
             {/* 印出資料 */}
@@ -219,7 +219,7 @@ const MenuCard = (props) => {
 
 
 
-}else if(thisURL=='https://coffee-house-46uj0eu28-shungyun89.vercel.app/MenuTypeHot'){
+}else if(thisURL=='MenuTypeHot'){
     return(
         <>
             {/* 印出資料 */}
