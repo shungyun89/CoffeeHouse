@@ -18,7 +18,7 @@ function Heart(props){
                                    window.location.reload()
                                     // console.log(process.env.REACT_APP_API_URL);
                                     // 刪除資料
-                                    const response = await fetch(`${process.env.REACT_APP_API_URL}/shop/wishlist/delete?fk_m_id=${thismemberid}&fk_p_id=${pt_id}`)    
+                                    const response = await fetch(`https://house-coffee-backend.herokuapp.com/shop/wishlist/delete?fk_m_id=${thismemberid}&fk_p_id=${pt_id}`)    
                               }} > 
                            <AiFillHeart className="heart3" size={24}  style = {{ color: 'red' }}/>
                     </button>
@@ -30,7 +30,7 @@ function Heart(props){
                                     window.location.reload()
                                     // console.log(process.env.REACT_APP_API_URL);
                                     // 新增資料
-                                    const response = await fetch(`${process.env.REACT_APP_API_URL}/shop/wishlist/add?fk_m_id=${thismemberid}&fk_p_id=${pt_id}`)
+                                    const response = await fetch(`https://house-coffee-backend.herokuapp.com/shop/wishlist/add?fk_m_id=${thismemberid}&fk_p_id=${pt_id}`)
                                 } } > 
                            <AiOutlineHeart className="heart3" size={24}/>
                         </button>

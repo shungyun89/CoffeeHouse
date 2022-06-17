@@ -16,14 +16,14 @@ const MenuTypeToday = () => {
         //從後端抓資料
         const [datas, setDatas ] = useState([])
         const fetchData = async()=>{
-            const response = await fetch('http://localhost:3001/menu');
+            const response = await fetch('https://house-coffee-backend.herokuapp.com/menu');
             const results = await response.json();         
                             setDatas(results);
 }
         useEffect(()=>{fetchData();},[])
         const [todaydatas, settodaydatas] = useState([])
         const fetctodyhData = async()=>{
-                            const response = await fetch('http://localhost:3001/menu/today');
+                            const response = await fetch('https://house-coffee-backend.herokuapp.com/menu/today');
                             const results = await response.json();         
                             settodaydatas(results);
         }

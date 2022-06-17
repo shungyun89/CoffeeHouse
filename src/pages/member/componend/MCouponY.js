@@ -4,7 +4,7 @@ function MCouponY(props){
     const [datas,setDatas] = useState([])
     const thismemberid=localStorage.getItem(true)
     const fetchData=async()=>{
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/morder/couYes?fk_m_id=${thismemberid}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/morder/couYes?fk_m_id=${thismemberid}`)
         const results=await response.json();
         setDatas(results);
         // console.log(results.length)

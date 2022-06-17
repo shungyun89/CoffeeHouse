@@ -34,7 +34,7 @@ function MemberLogin(props){
     //^設定註冊時的提示訊息^
 
     if(auth){
-        window.location.replace("http://localhost:3000/member/profile")
+        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile")
         //^如果已經登入，轉向個人基本資料^
     }else{
     
@@ -68,7 +68,7 @@ function MemberLogin(props){
                 setMailMessage("信箱格式錯誤");
             }else{
             //^格式驗證通過^
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/account/checkmail?member_mail=${new_mb_mail}`);
+                const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/checkmail?member_mail=${new_mb_mail}`);
                 //^取得資料庫使否有這筆EMAIL，若有回傳1，沒有回傳0^
                 const results = await response.json();
                 if(results.total === 0 ){
@@ -94,7 +94,7 @@ function MemberLogin(props){
             if(!account_re.test(new_mb_account)){
                 setAccounteMessage("帳號需4~20字英文數字組合");
             }else{
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/account/checkName?member_account=${new_mb_account}`);
+                const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/checkName?member_account=${new_mb_account}`);
                 //^取得資料庫使否有這筆帳號，若有回傳1，沒有回傳0^
             const results = await response.json();
             if(results.total === 0){
@@ -134,7 +134,7 @@ function MemberLogin(props){
         //點擊註冊按鈕
             if(mailMessage == "信箱可使用" && accountMessage == "帳號可使用" && PWMessage == "密碼符合"){
             //判斷3個提示訊息是否都符合註冊條件
-            const CRNM = await fetch(`${process.env.REACT_APP_API_URL}/account/CRNM?member_mail=${new_mb_mail}&member_account=${new_mb_account}&member_password=${new_mb_password}&member_point=${new_mb_point}&login_status=${new_login_status}`);
+            const CRNM = await fetch(`https://house-coffee-backend.herokuapp.com/account/CRNM?member_mail=${new_mb_mail}&member_account=${new_mb_account}&member_password=${new_mb_password}&member_point=${new_mb_point}&login_status=${new_login_status}`);
             //CRNM 為新增新的資料，沒有回傳值
             
             setmember_account(new_mb_account);
@@ -192,18 +192,18 @@ function MemberLogin(props){
 
         const loginBTN=async()=>{
             // 點擊登入
-            const loginTF = await fetch(`${process.env.REACT_APP_API_URL}/account/LoginTF/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
+            const loginTF = await fetch(`https://house-coffee-backend.herokuapp.com/account/LoginTF/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
             //判斷帳號密碼是否正確，如果正確回傳1
            
             
             const resultsTF = await loginTF.json();
             console.log(resultsTF);
             if(resultsTF.total===1){
-                const loginS=await fetch(`${process.env.REACT_APP_API_URL}/account/Loginid/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
+                const loginS=await fetch(`https://house-coffee-backend.herokuapp.com/account/Loginid/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
                 const loginS2 = await loginS.json();
                 if(loginS2.login_status==0){
     
-                const loginid = await fetch(`${process.env.REACT_APP_API_URL}/account/Loginid/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
+                const loginid = await fetch(`https://house-coffee-backend.herokuapp.com/account/Loginid/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
                 const loginMid = await loginid.json();
                 //取的登入的會員編號帳號信箱
                 localStorage.setItem("true", loginMid.member_id);
@@ -214,11 +214,11 @@ function MemberLogin(props){
                 let member_id=loginMid.member_id;
                 localStorage.setItem("dataCheck", "資料完整");
                 //先將dataCheck，設定為資料完整
-                const loginData = await fetch(`${process.env.REACT_APP_API_URL}/account/LoginData/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
+                const loginData = await fetch(`https://house-coffee-backend.herokuapp.com/account/LoginData/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
                 const results = await loginData.json();
                 //判斷登入的會員是否有基本資料，有的話回傳1，沒有回傳0
                 if(results.total===1){
-                    const login = await fetch(`${process.env.REACT_APP_API_URL}/account/Login/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
+                    const login = await fetch(`https://house-coffee-backend.herokuapp.com/account/Login/?member_account=${member_account}&member_password=${member_password}`, {method: "POST"});
                     const results = await login.json();
                     //取得登入的會員 的基本資料
                     console.log(results);
@@ -230,13 +230,13 @@ function MemberLogin(props){
                     localStorage.setItem("photo", results.member_photo);
                     //將會員基本資料分別寫入localStorage
                     // alert('成功登入');
-                    const loginstatus = await fetch(`${process.env.REACT_APP_API_URL}/account/LoginstatusY?member_id=${member_id}`);
+                    const loginstatus = await fetch(`https://house-coffee-backend.herokuapp.com/account/LoginstatusY?member_id=${member_id}`);
                     
                     
                     SweetloginY();
                     // setDataCheck(!dataCheck) 這不需要因為它本身useState是由 localStorage去驗證
                     setTimeout(() => {
-                        window.location.replace("http://localhost:3000/member/profile");
+                        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
                       }, 1500)
                     //轉向會員基本資料頁面
                 
@@ -248,7 +248,7 @@ function MemberLogin(props){
                     // alert('成功登入 但基本資料尚未完整');
                     //跳出訊息
                     setTimeout(() => {
-                        window.location.replace("http://localhost:3000/member/NewData");
+                        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
                       }, 1500)
                     //轉向填寫資料頁面
                     }

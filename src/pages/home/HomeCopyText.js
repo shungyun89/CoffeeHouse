@@ -39,7 +39,7 @@ function HomeCopyText(props) {
                                     } else {
                                         const state = "未使用"
                                         // alert("領取成功")
-                                        const response = await fetch(`http://localhost:3001/home/coupon/saved/toMember?fk_m_id=${thismemberid}&fk_coupon_id=${CP_id}&state=${state}`)
+                                        const response = await fetch(` https://house-coffee-backend.herokuapp.com/home/coupon/saved/toMember?fk_m_id=${thismemberid}&fk_coupon_id=${CP_id}&state=${state}`)
                                         const results = await response.json();
                                         setDatas(results);
                                         document.getElementById(CP_id).innerHTML = "已領取"
@@ -53,7 +53,7 @@ function HomeCopyText(props) {
                             return (
 
                                 <div className="copyText" onClick={() => {
-                                    window.location.replace("http://localhost:3000/member")
+                                    window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
                                 }}>
                                     請登入領取
                                 </div>

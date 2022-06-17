@@ -24,10 +24,10 @@ function FavoriteCard(props){
     }
 
     const fetchData=async()=>{
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/account/Favfavorite?fk_m_id=${thismemberid}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/Favfavorite?fk_m_id=${thismemberid}`)
         const results=await response.json();
         setDatas(results); 
-        const FVT = await fetch(`${process.env.REACT_APP_API_URL}/account/Favfavorite/TT?fk_m_id=${thismemberid}`)
+        const FVT = await fetch(`https://house-coffee-backend.herokuapp.com/account/Favfavorite/TT?fk_m_id=${thismemberid}`)
         const FVTT=await FVT.json();
         setFVTotal(FVTT.total); 
     }

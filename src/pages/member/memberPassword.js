@@ -9,9 +9,9 @@ function MemberPassword(props){
   const{auth}=props;
     const {dataCheck}=props;
     if(!auth){
-      window.location.replace("http://localhost:3000/member")
+      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("http://localhost:3000/member/NewData");
+      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
     }
   const account=localStorage.getItem("account");
   const [member_photo,setmember_photo]=useState(localStorage.getItem("photo"))
@@ -39,11 +39,11 @@ function MemberPassword(props){
   }
  
   const handleCheckPassword=async ()=>{
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/account/checkPassword?member_password=${member_password}&member_id=${thismemberid}`);
+    const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/checkPassword?member_password=${member_password}&member_id=${thismemberid}`);
     console.log(process.env.REACT_APP_API_URL);
     const results = await response.json();
     if(results.total === 1){
-      const getoldPWord = await fetch(`${process.env.REACT_APP_API_URL}/account//getoldPassword?member_password=${member_password}&member_id=${thismemberid}`);
+      const getoldPWord = await fetch(`https://house-coffee-backend.herokuapp.com/account//getoldPassword?member_password=${member_password}&member_id=${thismemberid}`);
       console.log(process.env.REACT_APP_API_URL);
       const oldPW = await getoldPWord.json();
       setpasswordMessage("舊密碼正確");
@@ -87,12 +87,12 @@ function MemberPassword(props){
 }
   const changPW=async ()=>{
     if(passwordMessage=='舊密碼正確' && passwordMessageN=="密碼符合" && passwordMessageN2=="新密碼對比正確"){
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/account/changePassword?member_password=${member_passwordN}&member_id=${thismemberid}`);
+    const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/changePassword?member_password=${member_passwordN}&member_id=${thismemberid}`);
     // const results = await response.json();
     // console.log(results);
     SweetpasswordY()
      setTimeout(() => {
-       window.location.replace("http://localhost:3000/member/profile");
+       window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
               }, 1600)
   }else{
     if(passwordMessage != '舊密碼正確'){
@@ -123,7 +123,7 @@ function MemberPassword(props){
                 
                 <div className="col-4 col-3None">
                     <div className="proList">
-                        <div className="memberPhoto"><img  src={`${process.env.REACT_APP_API_URL}/uploads/${member_photo}`}  alt="會員照片"></img></div>
+                        <div className="memberPhoto"><img  src={`https://house-coffee-backend.herokuapp.com/uploads/${member_photo}`}  alt="會員照片"></img></div>
                         <div className="memberNumber">
                             <div >會員帳號</div>
                             <div >{account}</div>
@@ -133,7 +133,7 @@ function MemberPassword(props){
                 <div className="col proR">
                     <div className="proMain">
                         <div className="proList_m">
-                            <div className="memberPhoto"><img  src={`${process.env.REACT_APP_API_URL}/uploads/${member_photo}`}  alt="會員照片"></img></div>
+                            <div className="memberPhoto"><img  src={`https://house-coffee-backend.herokuapp.com/uploads/${member_photo}`}  alt="會員照片"></img></div>
                             
                             <div className="memberNumber">
                                 <div >{account}</div>

@@ -21,15 +21,15 @@ function Memberprofile(props){
       }
     console.log(member_photo)
     if(!auth){
-        window.location.replace("http://localhost:3000/member");
+        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member");
     }if(!dataCheck){
-        window.location.replace("http://localhost:3000/member/NewData");
+        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
 
     }else{
 
 
     // if(dataCheck!=true){
-    //     window.location.replace("http://localhost:3000/member/NewData");
+    //     window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
     // }
   
  
@@ -50,7 +50,7 @@ function Memberprofile(props){
                     
                 <div className="col-4 col-3None">
                         <div className="proList">
-                            <div className="memberPhoto"><img  src={`${process.env.REACT_APP_API_URL}/uploads/${member_photo}`}  alt="會員照片"></img></div>
+                            <div className="memberPhoto"><img  src={`https://house-coffee-backend.herokuapp.com/uploads/${member_photo}`}  alt="會員照片"></img></div>
                             <div className="memberNumber">
                                 <div >會員帳號</div>
                                 <div >{member_account}</div> 
@@ -60,7 +60,7 @@ function Memberprofile(props){
                     <div className="col proR">
                         <div className="proMain">
                             <div className="proList_m">
-                                <div className="memberPhoto"><img   src={`${process.env.REACT_APP_API_URL}/uploads/${member_photo}`} alt="會員照片"></img></div>
+                                <div className="memberPhoto"><img   src={`https://house-coffee-backend.herokuapp.com/uploads/${member_photo}`} alt="會員照片"></img></div>
                                 <div className="memberNumber">
                                     <div >{member_account}</div>
                                 </div>

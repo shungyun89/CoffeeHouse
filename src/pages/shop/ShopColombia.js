@@ -33,7 +33,7 @@ const[amount, setAmount]= useState(1)
      // 向後端請求資料
      const fetchData = async()=>{
         //讀取本頁資料，並寫入datas
-        const response = await fetch('http://localhost:3001/shop/colombia');
+        const response = await fetch('https://house-coffee-backend.herokuapp.com/shop/colombia');
         const results = await response.json();
         setDatas(results);
         var WISH=[];
@@ -47,7 +47,7 @@ const[amount, setAmount]= useState(1)
        setDatasPMF(WISH)
         
         //讀取全部資料，並寫入Alldata
-      const Aresponse = await fetch('http://localhost:3001/shop');
+      const Aresponse = await fetch('https://house-coffee-backend.herokuapp.com/shop');
       const Aresults = await Aresponse.json();
       setAllDatas(Aresults);
    }

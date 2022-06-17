@@ -26,7 +26,7 @@ function ProductDetail(props){
    // 向後端請求資料
     const [datas, setDatas ] = useState([])
     const fetchData = async()=>{
-      const response = await fetch(`http://localhost:3001/shop/ProductDetail/id?id=${params.id}`);
+      const response = await fetch(`https://house-coffee-backend.herokuapp.com/shop/ProductDetail/id?id=${params.id}`);
       const results = await response.json();
       setDatas(results);
     }

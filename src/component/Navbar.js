@@ -43,7 +43,7 @@ function Navbar (props){
     localStorage.removeItem("true")
     LGOSweet()
     setTimeout(() => {
-      window.location.assign("http://localhost:3000/");
+      window.location.assign("https://coffee-house-46uj0eu28-shungyun89.vercel.app/");
     }, 1500)
 
   }

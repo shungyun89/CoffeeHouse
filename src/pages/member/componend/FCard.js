@@ -44,7 +44,7 @@ function FCard(props){
                                 if(window.confirm('請問要刪除收藏的 '+p_name+' 嗎')==true){
                                     window.alert("已刪除此收藏")
                                     document.getElementById(MF_id).style.display="none"
-                                    const response = await fetch(`${process.env.REACT_APP_API_URL}/account/Favfavorite/DF?MF_id=${MF_id}`)
+                                    const response = await fetch(`https://house-coffee-backend.herokuapp.com//account/Favfavorite/DF?MF_id=${MF_id}`)
                                 }else{
                                     alert("取消刪除")
                                 }

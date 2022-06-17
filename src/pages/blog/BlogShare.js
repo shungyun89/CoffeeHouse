@@ -21,7 +21,7 @@ function BlogShare(props){
  
     const fetchBlogShare = async () => {
         //向遠端伺服器get資料
-        const response = await fetch('http://localhost:3001/blog/share')
+        const response = await fetch(' https://house-coffee-backend.herokuapp.com/blog/share')
         const data = await response.json()
         //console.log(data)
         // 載入資料後設定到狀態中

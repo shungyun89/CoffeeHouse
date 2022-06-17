@@ -8,15 +8,14 @@ import './memberQAcheck.css'
    const{auth}=props
    const {dataCheck}=props;
     if(!dataCheck){
-        window.location.replace("http://localhost:3000/member/NewData");
+        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
     }
    
   const params = useParams()
   const [datas,setDatas] = useState([])
 
   const fetchData=async()=>{
-        console.log(process.env.REACT_APP_API_URL);
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/test/id?QA_id=${params.id}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/test/id?QA_id=${params.id}`)
         const results=await response.json();  
       
        setDatas(results);

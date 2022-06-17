@@ -15,9 +15,9 @@ function MemberprofileEdit(props){
     console.log(!dataCheck)
     console.log("---------")
     if(!auth){
-      window.location.replace("http://localhost:3000/member")
+      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("http://localhost:3000/member/NewData");
+      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
     }
   const thismemberid=localStorage.getItem("true");
   const account=localStorage.getItem("account");
@@ -51,7 +51,7 @@ function MemberprofileEdit(props){
   }
   // const UPP=async()=>{
   //   console.log("123")
-  //   const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/upphoto`);
+  //   const response = await fetch(`https://house-coffee-backend.herokuapp.com/profile/upphoto`);
   // }
 
     const phone_re = /^09[0-9]{8}$/;
@@ -60,7 +60,7 @@ function MemberprofileEdit(props){
         alert("手機格式錯誤");
       }else{
         if(UPname.length>0 && UPphone.length==10 &&UPPT==1){
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/UPdate?fk_member_id=${thismemberid}&member_name=${UPname}&member_nick=${UPnick}&member_birth=${UPbirth}&member_phone=${UPphone}&member_address=${UPaddress}&member_photo=${UPImg}`);
+          const response = await fetch(`https://house-coffee-backend.herokuapp.com/profile/UPdate?fk_member_id=${thismemberid}&member_name=${UPname}&member_nick=${UPnick}&member_birth=${UPbirth}&member_phone=${UPphone}&member_address=${UPaddress}&member_photo=${UPImg}`);
           
           localStorage.removeItem("name")
           localStorage.removeItem("nick")
@@ -78,7 +78,7 @@ function MemberprofileEdit(props){
 
           SweetPEY()
           setTimeout(() => {
-            window.location.replace("http://localhost:3000/member/profile");
+            window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
           }, 1500)
         }if(UPPT!=1){
           SweetNUP()
@@ -119,7 +119,7 @@ function MemberprofileEdit(props){
     let formData = new FormData()
     formData.append('file', image.data)
     console.log(formData);
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/upphoto`, {
+    const response = await fetch(`https://house-coffee-backend.herokuapp.com/profile/upphoto`, {
       method: 'POST',
       body: formData,
     })
@@ -146,7 +146,7 @@ function MemberprofileEdit(props){
                 <div className="col-4 col-3None">
                     <div className="proList">
                         <div className="memberPhotoE">
-                            <img id='avatar' src={`${process.env.REACT_APP_API_URL}/uploads/${UPImg}`}  alt="會員照片"></img>
+                            <img id='avatar' src={`https://house-coffee-backend.herokuapp.com/uploads/${UPImg}`}  alt="會員照片"></img>
                             <label htmlFor='upPhoto' className="changePhoto" >修改照片</label>
                         </div>
                         <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'center'}}>
@@ -170,7 +170,7 @@ function MemberprofileEdit(props){
                     <form>
                       <div className="proList_m">
                         <div className="memberPhotoE">
-                            <img id='avatar' src={`${process.env.REACT_APP_API_URL}/uploads/${UPImg}`}  alt="會員照片"></img>
+                            <img id='avatar' src={`https://house-coffee-backend.herokuapp.com/uploads/${UPImg}`}  alt="會員照片"></img>
                             <label htmlFor='upPhoto' className="changePhoto" >修改照片</label>
                         </div>
                         <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'center'}}>

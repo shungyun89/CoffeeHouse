@@ -7,7 +7,7 @@ function OrderListCard(){
 
     const fetchData=async()=>{
         // console.log(process.env.REACT_APP_API_URL);
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/morder/odList?fk_member_id=${thismemberid}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/morder/odList?fk_member_id=${thismemberid}`)
         const results=await response.json();
         setDatas(results); 
         // console.log(datas)

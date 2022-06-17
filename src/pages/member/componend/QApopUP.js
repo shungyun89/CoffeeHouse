@@ -37,7 +37,7 @@ function QApopUP(){
 
   const QAsub=async()=>{
     if(QATTMessage==""&&QASLMessage==""&&QATEXTMessage==""){
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/test/newQA?fk_member_id=${thismemberid}&ask_title=${QAtitle}&ask_type=${QAsel}&ask=${QAtextarea}&ans=${ans}`)
+      const response = await fetch(`https://house-coffee-backend.herokuapp.com/test/newQA?fk_member_id=${thismemberid}&ask_title=${QAtitle}&ask_type=${QAsel}&ask=${QAtextarea}&ans=${ans}`)
       const results=await response.json();  
       document.querySelector('.QApopupWrap').style.display="none"
       window.history.go(0)

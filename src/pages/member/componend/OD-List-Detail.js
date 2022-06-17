@@ -9,11 +9,11 @@ function OD_List_Detail(props){
 
     const fetchData=async()=>{
         // console.log(process.env.REACT_APP_API_URL);
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/morder/odList/detailed3?o_id=${o_id}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/morder/odList/detailed3?o_id=${o_id}`)
         const results=await response.json();
         setDatas(results); 
 
-        const count = await fetch(`${process.env.REACT_APP_API_URL}/morder/odList/detailed/count?fk_o_id=${o_id}`)
+        const count = await fetch(`https://house-coffee-backend.herokuapp.com/morder/odList/detailed/count?fk_o_id=${o_id}`)
         const counta=await count.json();
         // console.log(counta.total)
         setConTT(counta.total)

@@ -38,7 +38,7 @@ function HomeStore() {
         // console.log(document.getElementById("store").value)
         const name=document.getElementById("store").value
         if(name!="請選擇"){
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/home/store?store_name=${name}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/home/store?store_name=${name}`)
         const results=await response.json();
         setstore_name(results.store_name)
         setcity(results.city)

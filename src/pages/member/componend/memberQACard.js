@@ -6,7 +6,7 @@ function MemberQACard(props){
     const thismemberid=localStorage.getItem("true")
     const fetchData=async()=>{
 
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/test?fk_member_id=${thismemberid}`)
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/test?fk_member_id=${thismemberid}`)
         const results=await response.json();
         setDatas(results);
     }

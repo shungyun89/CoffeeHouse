@@ -65,7 +65,7 @@ function StoreMapCardWrap(props){
   // 向遠端伺服器get資料
   const fetchServeData = async(keyword) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/store/getServeList`)
+      const response = await fetch(` https://house-coffee-backend.herokuapp.com/store/getServeList`)
       const results = await response.json()
       if (Array.isArray(results)) {
         const propertyValue = Object.values(results).map(item => item.serve_name);
@@ -81,7 +81,7 @@ function StoreMapCardWrap(props){
   // 向遠端伺服器get資料
   const fetchData = async (keyword) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/store`)
+      const response = await fetch(` https://house-coffee-backend.herokuapp.com/store`)
       const results = await response.json()
 
       // console.log(results);
@@ -119,7 +119,7 @@ function StoreMapCardWrap(props){
           if (GEOresults.status === "OK") {
             // console.log(GEOresults)
             const updateLatLng = await fetch(
-              `${process.env.REACT_APP_API_URL}/store/${results[i].id}/${GEOresults.results[0].geometry.location.lat}/${GEOresults.results[0].geometry.location.lng}`,
+              ` https://house-coffee-backend.herokuapp.com/store/${results[i].id}/${GEOresults.results[0].geometry.location.lat}/${GEOresults.results[0].geometry.location.lng}`,
               {method: "PUT"})
             // console.log(await updateLanLng.json())
           }
@@ -133,7 +133,7 @@ function StoreMapCardWrap(props){
           // 載入資料後設定到狀態中
           // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
           
-          const response2 = await fetch(`${process.env.REACT_APP_API_URL}/store`)
+          const response2 = await fetch(` https://house-coffee-backend.herokuapp.com/store`)
           const results2 = await response2.json()
           if (Array.isArray(results2)) {
             setData(results2)
@@ -152,7 +152,7 @@ function StoreMapCardWrap(props){
   const fetchFilterData = async (keyword) => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/store/` + keyword
+        ` https://house-coffee-backend.herokuapp.com/store/` + keyword
       )
 
       const results = await response.json()

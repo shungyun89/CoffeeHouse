@@ -83,14 +83,14 @@ function Pay3(){
         setMyP(mypoint)
 
           }
-      
+         
           const complete =async()=>{
               if(cName!=""&&  cvc!=""){
-                const o_condition = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/paydetail?order_condition=${order_condition}&o_id=${o_id}`)
-                const pointss = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/Newpoint?member_point=${Myp+Newp}&member_id=${thisMemberid}`)
+                const o_condition = await fetch(` https://house-coffee-backend.herokuapp.com/shoporder/paydetail?order_condition=${order_condition}&o_id=${o_id}`)
+                const pointss = await fetch(` https://house-coffee-backend.herokuapp.com/shoporder/Newpoint?member_point=${Myp+Newp}&member_id=${thisMemberid}`)
                 localStorage.setItem("point", Myp+Newp);
 
-                const member_orderlist="http://localhost:3000/member/Order/"+o_id
+                const member_orderlist="https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/Order/"+o_id
                 window.location.replace(member_orderlist)
               }else{
                 alert ("付款失敗")

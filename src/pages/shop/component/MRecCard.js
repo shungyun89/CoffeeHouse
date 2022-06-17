@@ -12,7 +12,7 @@ function MRecCard(){
   // 向後端請求資料
   const [datas, setDatas ] = useState([])
   const fetchData = async()=>{
-    const response = await fetch('http://localhost:3001/shop');
+    const response = await fetch('https://house-coffee-backend.herokuapp.com/shop');
     const results = await response.json();
     setDatas(results);
   }

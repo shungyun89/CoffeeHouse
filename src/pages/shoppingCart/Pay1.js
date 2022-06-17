@@ -32,7 +32,7 @@ function Pay1(props){
 
     //回去繼續購物
     const keepshopping = ()=>{
-        window.location.assign("http://localhost:3000/shop")
+        window.location.assign("https://coffee-house-46uj0eu28-shungyun89.vercel.app/shop")
          }  
 
     //按下一步跳pay2
@@ -73,17 +73,17 @@ function Pay1(props){
             setREmail(email)
             setRAddress(address)
             if (nameMessage=="" && phoneMessage=="" &&emailMessage=="" &&addressMessage==""&& RnameMessage=="" &&RphoneMessage==""&&RemailMessage==""&&RaddressMessage==""&&shipment!='' ){
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/order?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
+                const response = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/order?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
 
-                const useP=await fetch(`${process.env.REACT_APP_API_URL}/shoporder/usePoint?member_point=${mpoint-pointla}&member_id=${thismemberid}`)
+                const useP=await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/usePoint?member_point=${mpoint-pointla}&member_id=${thismemberid}`)
                 localStorage.setItem("point", mpoint-pointla);
 
                
 
                 if(MC_id!=""){
-                    const useC=await fetch(`${process.env.REACT_APP_API_URL}/shoporder/useCou?MC_id=${MC_id}`)
+                    const useC=await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/useCou?MC_id=${MC_id}`)
                 }
-                const oid = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/orderid?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
+                const oid = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/orderid?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
 
                 const oid2 = await oid.json();
                 const thisoid = oid2.o_id
@@ -93,7 +93,7 @@ function Pay1(props){
                     //console.log.log(fk_p_id)
                     const qty=odmap[i].ShopCounter
                     //console.log.log(qty)
-                    const od = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/orderdetail?fk_o_id=${thisoid}&fk_p_id=${fk_p_id}&qty=${qty}`)
+                    const od = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/orderdetail?fk_o_id=${thisoid}&fk_p_id=${fk_p_id}&qty=${qty}`)
                 }
                 document.querySelector('.payTwo').style.display="block"
                 document.querySelector('.payOne').style.display="none"
@@ -114,16 +114,16 @@ function Pay1(props){
         }
         }else{
             if (nameMessage=="" && phoneMessage=="" &&emailMessage=="" &&addressMessage==""&& RnameMessage=="" &&RphoneMessage==""&&RemailMessage==""&&RaddressMessage==""&&shipment!='' ){
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/order?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
+                const response = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/order?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
 
-                const useP=await fetch(`${process.env.REACT_APP_API_URL}/shoporder/usePoint?member_point=${mpoint-pointla}&member_id=${thismemberid}`)
+                const useP=await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/usePoint?member_point=${mpoint-pointla}&member_id=${thismemberid}`)
 
                
 
                 if(MC_id!=""){
-                    const useC=await fetch(`${process.env.REACT_APP_API_URL}/shoporder/useCou?MC_id=${MC_id}`)
+                    const useC=await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/useCou?MC_id=${MC_id}`)
                 }
-                const oid = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/orderid?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
+                const oid = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/orderid?fk_member_id=${thismemberid}&shipment=${shipment}&pay=${paycard}&order_condition=${ocondition}&buy_name=${name}&buy_phone=${phone}&buy_email=${email}&buy_address=${address}&recipient_name=${Rname}&recipient_phone=${Rphone}&recipient_email=${Remail}&recipient_address=${Raddress}&remark=${note}&used_coupon=${ctotal}&used_points=${pointla}`);
 
                 const oid2 = await oid.json();
                 const thisoid = oid2.o_id
@@ -133,7 +133,7 @@ function Pay1(props){
                     //console.log.log(fk_p_id)
                     const qty=odmap[i].ShopCounter
                     //console.log.log(qty)
-                    const od = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/orderdetail?fk_o_id=${thisoid}&fk_p_id=${fk_p_id}&qty=${qty}`)
+                    const od = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/orderdetail?fk_o_id=${thisoid}&fk_p_id=${fk_p_id}&qty=${qty}`)
                 }
                 document.querySelector('.payTwo').style.display="block"
                 document.querySelector('.payOne').style.display="none"
@@ -362,11 +362,11 @@ const[ newpoint , setNewpoint] = useState(0)
     // let[pricetotal1, setpricetotal1] = useState('')
     const [datas, setDatas ] = useState([])
     const fetchData = async()=>{    
-     const response = await fetch('http://localhost:3001/shop'); 
+     const response = await fetch('https://house-coffee-backend.herokuapp.com/shop'); 
      const results = await response.json();
                      setDatas(results);
 
-        const point = await fetch(`http://localhost:3001/shoporder/point?member_id=${thismemberid}`);
+        const point = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/point?member_id=${thismemberid}`);
         const repoint = await point.json();
         setMpoint(repoint.member_point);
         //console.log.log(repoint.member_point);

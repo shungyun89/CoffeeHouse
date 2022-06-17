@@ -10,7 +10,7 @@ import SweetNUP from './sweetalert/SweetNUP';
 function MemberNewData(props){
   const{auth}=props;
     if(!auth){
-      window.location.replace("http://localhost:3000/member")
+      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
     }
   var today = new Date();
   var dd = today.getDate();
@@ -95,7 +95,7 @@ function MemberNewData(props){
       if(!phone_re.test(UPphone)){
         setPhoneMessage("手機格式錯誤")
         }else{
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/account/checkPhone?member_phone=${UPphone}`);
+          const response = await fetch(`https://house-coffee-backend.herokuapp.com/account/checkPhone?member_phone=${UPphone}`);
           console.log(process.env.REACT_APP_API_URL);
           const results = await response.json();
           console.log(results)
@@ -124,7 +124,7 @@ function MemberNewData(props){
     const NewDataBTN=async()=>{
       if(nameMessage=="感謝填寫姓名" && birthMessage=="感謝填寫生日" && phoneMessage=="感謝填寫手機號碼"&& addressMessage=="感謝填寫地址"&&UPPT==1){
        
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/Newdate?fk_member_id=${thismemberid}&member_name=${UPname}&member_nick=${UPnick}&member_birth=${UPbirth}&member_phone=${UPphone}&member_address=${UPaddress}&member_photo=${UPImg}`);
+          const response = await fetch(`https://house-coffee-backend.herokuapp.com/profile/Newdate?fk_member_id=${thismemberid}&member_name=${UPname}&member_nick=${UPnick}&member_birth=${UPbirth}&member_phone=${UPphone}&member_address=${UPaddress}&member_photo=${UPImg}`);
         
           
        
@@ -189,7 +189,7 @@ function MemberNewData(props){
       let formData = new FormData()
       formData.append('file', image.data)
       console.log(formData);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/profile/upphoto`, {
+      const response = await fetch(`https://house-coffee-backend.herokuapp.com/profile/upphoto`, {
         method: 'POST',
         body: formData,
       })
@@ -214,7 +214,7 @@ function MemberNewData(props){
                 <div className="col-6 col-3None">
                 <div className="proList">
                         <div className="memberPhotoE">
-                            <img id='avatar' src={`${process.env.REACT_APP_API_URL}/uploads/${UPImg}`}  alt="會員照片"></img>
+                            <img id='avatar' src={`https://house-coffee-backend.herokuapp.com/uploads/${UPImg}`}  alt="會員照片"></img>
                             <label htmlFor='upPhoto' className="changePhoto" >修改照片</label>
                         </div>
                         <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'center'}}>
@@ -238,7 +238,7 @@ function MemberNewData(props){
                     <form>
                     <div className="proList_m">
                         <div className="memberPhotoE">
-                            <img id='avatar' src={`${process.env.REACT_APP_API_URL}/uploads/${UPImg}`}  alt="會員照片"></img>
+                            <img id='avatar' src={`https://house-coffee-backend.herokuapp.com/uploads/${UPImg}`}  alt="會員照片"></img>
                             <label htmlFor='upPhoto' className="changePhoto" >修改照片</label>
                         </div>
                         <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'center'}}>

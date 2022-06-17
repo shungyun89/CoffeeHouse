@@ -9,7 +9,7 @@ const PeopleNum = () => {
     
     const [datas, setDatas ] = useState([])
     const fetchData = async()=>{
-                            const response = await fetch('http://localhost:3001/menu/oder');
+                            const response = await fetch('https://house-coffee-backend.herokuapp.com/smenu/oder');
                             const results = await response.json();
                             setDatas(results);
                     }

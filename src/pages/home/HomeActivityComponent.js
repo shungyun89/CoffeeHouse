@@ -10,7 +10,7 @@ function HomeActivityComponent() {
     const thismemberid=localStorage.getItem(true)
     const fetchData=async()=>{
         // console.log(process.env.REACT_APP_API_URL);
-        const response = await fetch('http://localhost:3001/home/coupon')
+        const response = await fetch(' https://house-coffee-backend.herokuapp.com/home/coupon')
         const results=await response.json();
         setDatas(results);
         var savetomb=[];
@@ -20,7 +20,7 @@ function HomeActivityComponent() {
             // console.log(results[i].CP_id);
 
             const fk_CP_id=results[i].CP_id;
-            const YN = await fetch(`http://localhost:3001/home/coupon/saved?fk_m_id=${thismemberid}&fk_coupon_id=${fk_CP_id}`)
+            const YN = await fetch(` https://house-coffee-backend.herokuapp.com/home/coupon/saved?fk_m_id=${thismemberid}&fk_coupon_id=${fk_CP_id}`)
             const YN1=await YN.json();
             const YNTT=YN1.total
             // console.log(YN1.total);

@@ -13,7 +13,7 @@ function Coupon(props){
     const thismemberid=localStorage.getItem(true)
     const fetchData = async()=>{
         //讀取本頁資料，並寫入datas
-        const response = await fetch(`http://localhost:3001/shoporder/coupon?fk_m_id=${thismemberid}`);
+        const response = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/coupon?fk_m_id=${thismemberid}`);
         const results = await response.json();
         setDatas(results);
         //console.log.log(results);
