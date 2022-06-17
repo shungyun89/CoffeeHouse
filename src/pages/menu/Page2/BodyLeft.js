@@ -114,7 +114,8 @@ const BodyLeft = props => {
                                             if (isSubmitting === true) {
                                                 window.location.href=("/OnlineCheckPage3")
                                                 localStorage.setItem("gifts", JSON.stringify([]))
-                                                const indate = await fetch(`http://localhost:3001/menu/inmenu?pay=${'信用卡'}&orderer=${values.name}&phone=${values.phone}&odertime=${values.time}&drink_total_price=${datas.totalprice}`)
+                                                const indate = await fetch(`https://house-coffee-backend.herokuapp.com/menu/inmenu?pay=${'信用卡'}&orderer=${values.name}&phone=${values.phone}&odertime=${values.time}&drink_total_price=${datas.totalprice}`)
+                                                const indates = await fetch(`https://house-coffee-backend.herokuapp.com//payment/paymentaction?totalprice=${datas.totalprice}`)
                                             }
                                         }}
                                     >
