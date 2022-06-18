@@ -33,7 +33,7 @@ const FavouritePage = () => {
                 }
             } 
         }
-        
+        const favpathname = window.location.pathname
         return( 
             <>   
                 <div className="bodyMenu">
@@ -45,12 +45,14 @@ const FavouritePage = () => {
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
                                 favdatas={favdatas}
+                                favpathname={favpathname}
                             />
                             <MenuCardRwd 
                                 datas={datas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
-                                favdatas={favdatas} 
+                                favdatas={favdatas}
+                                favpathname={favpathname} 
                             />
                             <Popup 
                                 datas={datas}  

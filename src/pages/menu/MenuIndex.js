@@ -21,7 +21,8 @@ const MenuIndex = () => {
         }
         useEffect(()=>{fetchData();},[])
         const datas1 = JSON.parse(localStorage.getItem('gifts'))
-        console.log(window.location.pathname);
+
+        const indexpathname = window.location.pathname 
         return( 
             <>   
                 <div className="bodyMenu">
@@ -32,11 +33,13 @@ const MenuIndex = () => {
                                 datas={datas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
+                                indexpathname={indexpathname} 
                             />
                             <MenuCardRwd 
                                 datas={datas}
                                 setdrinkId={setdrinkId}
-                                setcss={setcss} 
+                                setcss={setcss}
+                                indexpathname={indexpathname} 
                             />
                             <Popup 
                                 datas={datas}  

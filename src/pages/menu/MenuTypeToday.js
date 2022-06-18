@@ -28,7 +28,7 @@ const MenuTypeToday = () => {
                             settodaydatas(results);
         }
         useEffect(()=>{fetctodyhData();},[])
-        console.log(todaydatas);
+        const todaypathname = window.location.pathname 
         return( 
             <>   
                 <div className="bodyMenu">
@@ -40,12 +40,14 @@ const MenuTypeToday = () => {
                                 todaydatas={todaydatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
+                                todaypathname={todaypathname}
                             />
                             <MenuCardRwd 
                                 datas={datas}
                                 todaydatas={todaydatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss} 
+                                todaypathname={todaypathname}
                             />
                             <Popup 
                                 datas={datas}

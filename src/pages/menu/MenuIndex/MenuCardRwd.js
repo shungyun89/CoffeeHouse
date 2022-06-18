@@ -6,14 +6,19 @@ import {React, useEffect} from "react";
 const MenuCardRwd = (props) => {
     // 傳遞點擊id    // 接收父層資料
     const {setdrinkId, setcss, datas, favdatas, todaydatas, icedatas, hotdatas} = props
-
+    const {favpathname, todaypathname, icepathname, hotpathname, indexpathname} = props
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
     
-    const thisURL= window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
-
-    switch (thisURL) {
+    const pathname = [favpathname, todaypathname, icepathname, hotpathname, indexpathname]
+    let pathname1 =null
+    for(let i = 0; i<6; i++){
+        if(Boolean(pathname[i]) === true ){
+            pathname1 = pathname[i]
+        }
+    }
+    switch ('pathname1') {
         case '/favorite':
             return(
                 <>
@@ -228,8 +233,7 @@ return(
                         )
                     })}
                 </>   
-        ) 
-        
+        )       
     }
 
 

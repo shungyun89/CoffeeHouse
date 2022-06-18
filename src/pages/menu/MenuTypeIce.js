@@ -28,7 +28,7 @@ const MenuTypeIce = () => {
                             seticedatas(results);
                         }
         useEffect(()=>{fetctodyhData();},[])
-        console.log(icedatas);
+        const icepathname = window.location.pathname 
         return( 
             <>   
                 <div className="bodyMenu">
@@ -40,12 +40,14 @@ const MenuTypeIce = () => {
                                 icedatas={icedatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
+                                icepathname={icepathname}
                             />
                             <MenuCardRwd 
                                 datas={datas}
                                 icedatas={icedatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss} 
+                                icepathname={icepathname}
                             />
                             <Popup 
                                 datas={datas}

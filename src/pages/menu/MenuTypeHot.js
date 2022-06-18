@@ -28,6 +28,7 @@ const MenuTypeHot = () => {
                             sethotdatas(results);
                         }
         useEffect(()=>{fetctodyhData();},[])
+        const hotpathname = window.location.pathname 
         return( 
             <>   
                 <div className="bodyMenu">
@@ -39,12 +40,14 @@ const MenuTypeHot = () => {
                                 hotdatas={hotdatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss}
+                                hotpathname={hotpathname}
                             />
                             <MenuCardRwd 
                                 datas={datas}
                                 hotdatas={hotdatas}
                                 setdrinkId={setdrinkId}
                                 setcss={setcss} 
+                                hotpathname={hotpathname}
                             />
                             <Popup 
                                 datas={datas}
