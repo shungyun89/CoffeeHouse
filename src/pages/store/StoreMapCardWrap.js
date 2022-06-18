@@ -93,7 +93,7 @@ function StoreMapCardWrap(props){
         filterCity(results)
       }
       
-      const API_KEY = process.env.REACT_APP_GMAP_API_KEY
+      const API_KEY = "AIzaSyASbs1gvm9nFLFqEAE0pPjA4X9aXjc6O9Q"
       const LANGUAGE = "zh-Tw"
       const REGION = "TW"
       const GOOGLE_API = "https://maps.googleapis.com/maps/api/geocode/json"

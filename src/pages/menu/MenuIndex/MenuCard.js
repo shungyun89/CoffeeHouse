@@ -11,7 +11,7 @@ const MenuCard = (props) => {
     const thisURL=window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
-
+    
 
     if(thisURL=='onlinemenu'){
     return(

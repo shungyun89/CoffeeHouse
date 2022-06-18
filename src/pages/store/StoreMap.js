@@ -19,7 +19,7 @@ function StoreMap(props){
   const thisData = data
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey:  'https://house-coffee-backend.herokuapp.com/'
+    googleMapsApiKey:  'AIzaSyASbs1gvm9nFLFqEAE0pPjA4X9aXjc6O9Q'
   })
 
   /*---------------- useEffect ----------------*/

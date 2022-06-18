@@ -21,6 +21,7 @@ const MenuIndex = () => {
         }
         useEffect(()=>{fetchData();},[])
         const datas1 = JSON.parse(localStorage.getItem('gifts'))
+        console.log(window.location.pathname);
         return( 
             <>   
                 <div className="bodyMenu">
