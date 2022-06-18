@@ -29,6 +29,7 @@ const MenuTypeHot = () => {
                         }
         useEffect(()=>{fetctodyhData();},[])
         const hotpathname = window.location.pathname 
+        console.log(hotpathname);
         return( 
             <>   
                 <div className="bodyMenu">

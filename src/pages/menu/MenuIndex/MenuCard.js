@@ -11,7 +11,13 @@ const MenuCard = (props) => {
     const thisURL=window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
-
+    const pathname = [favpathname, todaypathname, icepathname, hotpathname, indexpathname]
+    let pathname1 =null
+    for(let i = 0; i<6; i++){
+        if(Boolean(pathname[i]) === true ){
+            pathname1 = pathname[i]
+        }
+    }
 
     if(thisURL=='/onlinemenu'){
     return(
