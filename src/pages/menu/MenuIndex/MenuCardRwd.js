@@ -9,14 +9,16 @@ const MenuCardRwd = (props) => {
 
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
     
-    const thisURL=window.location.pathname
+    const thisURL= window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
-    if(thisURL=='/onlinemenu'){
-        return(
+
+    switch (thisURL) {
+        case '/favorite':
+            return(
                 <>
                     {/* 印出資料 */}
-                    {datas.map((mu,i)=>{
+                    {favdatas.map((mu,i)=>{
                         // 儲存圖片路徑
                         const img1 = (mu.drink_name)
                         return(
@@ -53,95 +55,54 @@ const MenuCardRwd = (props) => {
                         )
                     })}
                 </>   
-        ) 
-}else if(thisURL=='/favorite'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {favdatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div className="listBodyRwd">
-                        <div 
-                            className="d-flex align-items-center justify-content-between cardRwd" 
-                            type="button" 
-                            key={mu.id}  
-                            onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                        >
-                            <div className="listRwdImg">
-                                <img 
-                                    className=" listImg"
-                                    src={require('../img/'+ img1 +'.jpg')} 
-                                    alt=""
-                                />
+            ) 
+        break;
+        case '/MenuTypeToday':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {todaydatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
+                            <div className="listBodyRwd">
+                                <div 
+                                    className="d-flex align-items-center justify-content-between cardRwd" 
+                                    type="button" 
+                                    key={mu.id}  
+                                    onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                >
+                                    <div className="listRwdImg">
+                                        <img 
+                                            className=" listImg"
+                                            src={require('../img/'+ img1 +'.jpg')} 
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="nameRotateRwd">
+                                        <span >
+                                            {mu.drink_name}
+                                        </span>
+                                    </div>
+                                    <div className="price">
+                                        ${mu.price}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="nameRotateRwd">
-                                <span >
-                                    {mu.drink_name}
-                                </span>
-                            </div>
-                            <div className="price">
-                                ${mu.price}
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
-        </>   
-    ) 
-
-}else if(thisURL=='/MenuTypeToday'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {todaydatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div className="listBodyRwd">
-                        <div 
-                            className="d-flex align-items-center justify-content-between cardRwd" 
-                            type="button" 
-                            key={mu.id}  
-                            onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                        >
-                            <div className="listRwdImg">
-                                <img 
-                                    className=" listImg"
-                                    src={require('../img/'+ img1 +'.jpg')} 
-                                    alt=""
-                                />
-                            </div>
-                            <div className="nameRotateRwd">
-                                <span >
-                                    {mu.drink_name}
-                                </span>
-                            </div>
-                            <div className="price">
-                                ${mu.price}
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
-        </>   
-    ) 
-
-}else if(thisURL=='/MenuTypeIce'){
-    return(
+                        )
+                    })}
+                </>   
+            ) 
+        
+        break;
+        case '/MenuTypeIce':
+return(
         <>
             {/* 印出資料 */}
             {icedatas.map((mu,i)=>{
@@ -182,53 +143,94 @@ const MenuCardRwd = (props) => {
             })}
         </>   
     ) 
-}else if(thisURL=='/MenuTypeHot'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {hotdatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div className="listBodyRwd">
-                        <div 
-                            className="d-flex align-items-center justify-content-between cardRwd" 
-                            type="button" 
-                            key={mu.id}  
-                            onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                        >
-                            <div className="listRwdImg">
-                                <img 
-                                    className=" listImg"
-                                    src={require('../img/'+ img1 +'.jpg')} 
-                                    alt=""
-                                />
+        break;
+        case '/MenuTypeHot':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {hotdatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
+                            <div className="listBodyRwd">
+                                <div 
+                                    className="d-flex align-items-center justify-content-between cardRwd" 
+                                    type="button" 
+                                    key={mu.id}  
+                                    onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                >
+                                    <div className="listRwdImg">
+                                        <img 
+                                            className=" listImg"
+                                            src={require('../img/'+ img1 +'.jpg')} 
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="nameRotateRwd">
+                                        <span >
+                                            {mu.drink_name}
+                                        </span>
+                                    </div>
+                                    <div className="price">
+                                        ${mu.price}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="nameRotateRwd">
-                                <span >
-                                    {mu.drink_name}
-                                </span>
+                        )
+                    })}
+                </>   
+            ) 
+        break;
+        default:
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {datas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
+                            <div className="listBodyRwd">
+                                <div 
+                                    className="d-flex align-items-center justify-content-between cardRwd" 
+                                    type="button" 
+                                    key={mu.id}  
+                                    onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                >
+                                    <div className="listRwdImg">
+                                        <img 
+                                            className=" listImg"
+                                            src={require('../img/'+ img1 +'.jpg')} 
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="nameRotateRwd">
+                                        <span >
+                                            {mu.drink_name}
+                                        </span>
+                                    </div>
+                                    <div className="price">
+                                        ${mu.price}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="price">
-                                ${mu.price}
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
-        </>   
-    ) 
-
-}
-
-
-
+                        )
+                    })}
+                </>   
+        ) 
+        
+    }
 
 
 }
