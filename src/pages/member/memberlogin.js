@@ -34,7 +34,7 @@ function MemberLogin(props){
     //^設定註冊時的提示訊息^
 
     if(auth){
-        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile")
+        window.location.replace("https://house-coffee.vercel.app/member/profile")
         //^如果已經登入，轉向個人基本資料^
     }else{
     
@@ -236,7 +236,7 @@ function MemberLogin(props){
                     SweetloginY();
                     // setDataCheck(!dataCheck) 這不需要因為它本身useState是由 localStorage去驗證
                     setTimeout(() => {
-                        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
+                        window.location.replace("https://house-coffee.vercel.app/member/profile");
                       }, 1500)
                     //轉向會員基本資料頁面
                 
@@ -248,7 +248,7 @@ function MemberLogin(props){
                     // alert('成功登入 但基本資料尚未完整');
                     //跳出訊息
                     setTimeout(() => {
-                        window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+                        window.location.replace("https://house-coffee.vercel.app/member/NewData");
                       }, 1500)
                     //轉向填寫資料頁面
                     }

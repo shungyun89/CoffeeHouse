@@ -10,7 +10,7 @@ import SweetNUP from './sweetalert/SweetNUP';
 function MemberNewData(props){
   const{auth}=props;
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }
   var today = new Date();
   var dd = today.getDate();
@@ -138,7 +138,7 @@ function MemberNewData(props){
           localStorage.setItem("dataCheck", "資料完整");
           SweetNDY()
           setTimeout(() => {
-            window.location.replace("http://localhost:3000/member/profile");
+            window.location.replace("https://house-coffee.vercel.app/member/profile");
           }, 1500)
         }else {if(nameMessage!="感謝填寫姓名"){
           document.querySelector(".NewName").style.color="red";

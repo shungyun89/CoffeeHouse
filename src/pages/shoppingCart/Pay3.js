@@ -30,14 +30,14 @@ function Pay3(){
     var payM=0
     const fetchData=async()=>{
     //console.log.log(process.env.REACT_APP_API_URL);
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/shoporder/Shoppingcart/id?o_id=${o_id}`)
+    const response = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder/Shoppingcart/id?o_id=${o_id}`)
     const results=await response.json();  
     setDatas(results);
     console.log(results)
 
     //console.log.log(results)
     // 抓memberorderlist的sql
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/morder/odList/detailed?o_id=${o_id}`)
+    const res = await fetch(`https://house-coffee-backend.herokuapp.com/morder/odList/detailed?o_id=${o_id}`)
     const result=await res.json();
     console.log(result)
     for(var m = 0 ; m<result.length;m++ ){
@@ -77,7 +77,7 @@ function Pay3(){
         const finalPay = payM + payship - coupon - point
         setPayMoney(finalPay)
         setNewP(parseInt(finalPay/100))
-        const mpoint = await fetch(`${process.env.REACT_APP_API_URL}/shoporder//getpoint?member_id=${thismid}`)
+        const mpoint = await fetch(`https://house-coffee-backend.herokuapp.com/shoporder//getpoint?member_id=${thismid}`)
         const mypoint=await mpoint.json();
         //console.log.log(mypoint);
         setMyP(mypoint)
@@ -90,7 +90,7 @@ function Pay3(){
                 const pointss = await fetch(` https://house-coffee-backend.herokuapp.com/shoporder/Newpoint?member_point=${Myp+Newp}&member_id=${thisMemberid}`)
                 localStorage.setItem("point", Myp+Newp);
 
-                const member_orderlist="https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/Order/"+o_id
+                const member_orderlist="https://house-coffee.vercel.app/member/Order/"+o_id
                 window.location.replace(member_orderlist)
               }else{
                 alert ("付款失敗")

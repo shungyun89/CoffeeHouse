@@ -53,7 +53,7 @@ function HomeCopyText(props) {
                             return (
 
                                 <div className="copyText" onClick={() => {
-                                    window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+                                    window.location.replace("https://house-coffee-backend.herokuapp.com/member")
                                 }}>
                                     請登入領取
                                 </div>

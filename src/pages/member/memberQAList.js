@@ -15,9 +15,9 @@ function MemberQAList(props){
     const {dataCheck}=props;
     console.log(auth);
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+      window.location.replace("https://house-coffee.vercel.app/member/NewData");
     }
     const thismemberid=localStorage.getItem("true");
   

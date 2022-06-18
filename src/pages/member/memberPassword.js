@@ -9,9 +9,9 @@ function MemberPassword(props){
   const{auth}=props;
     const {dataCheck}=props;
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+      window.location.replace("https://house-coffee.vercel.app/member/NewData");
     }
   const account=localStorage.getItem("account");
   const [member_photo,setmember_photo]=useState(localStorage.getItem("photo"))
@@ -92,7 +92,7 @@ function MemberPassword(props){
     // console.log(results);
     SweetpasswordY()
      setTimeout(() => {
-       window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
+       window.location.replace("https://house-coffee.vercel.app/member/profile");
               }, 1600)
   }else{
     if(passwordMessage != '舊密碼正確'){

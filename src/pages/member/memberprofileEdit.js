@@ -15,9 +15,9 @@ function MemberprofileEdit(props){
     console.log(!dataCheck)
     console.log("---------")
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+      window.location.replace("https://house-coffee.vercel.app/member/NewData");
     }
   const thismemberid=localStorage.getItem("true");
   const account=localStorage.getItem("account");
@@ -78,7 +78,7 @@ function MemberprofileEdit(props){
 
           SweetPEY()
           setTimeout(() => {
-            window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/profile");
+            window.location.replace("https://house-coffee.vercel.app/member/profile");
           }, 1500)
         }if(UPPT!=1){
           SweetNUP()

@@ -19,9 +19,9 @@ function MemberOrder(props){
     const internationalNumberFormat = new Intl.NumberFormat('en-US')
     
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+      window.location.replace("https://house-coffee.vercel.app/member/NewData");
     }
 
     
@@ -85,7 +85,7 @@ function MemberOrder(props){
                         <h4 className="col-3None gopay">{order_condition}</h4> 
                         {state?<></>:<button className="coffeeLightBtn gopay gopayBTN" 
                             onClick={()=>{
-                                const p3="https://coffee-house-46uj0eu28-shungyun89.vercel.app/shoppingCart/pay3/"+thiso_id
+                                const p3="https://house-coffee.vercel.app/shoppingCart/pay3/"+thiso_id
 
                                 window.location.replace(p3)
                              

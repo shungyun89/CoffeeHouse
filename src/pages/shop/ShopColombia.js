@@ -38,7 +38,7 @@ const[amount, setAmount]= useState(1)
         setDatas(results);
         var WISH=[];
         for(var i=0;i<results.length;i++){
-        const PMF = await fetch(`${process.env.REACT_APP_API_URL}/shop/wishlist?fk_m_id=${thismemberid}&fk_p_id=${results[i].p_id}`);
+        const PMF = await fetch(`'https://house-coffee-backend.herokuapp.com/shop/wishlist?fk_m_id=${thismemberid}&fk_p_id=${results[i].p_id}`);
          const PMF2 = await PMF.json();
          //console.log.log(results[i].p_id)
          //console.log.log(PMF2.total)

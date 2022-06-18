@@ -32,7 +32,7 @@ function Pay1(props){
 
     //回去繼續購物
     const keepshopping = ()=>{
-        window.location.assign("https://coffee-house-46uj0eu28-shungyun89.vercel.app/shop")
+        window.location.assign("https://house-coffee.vercel.app/shop")
          }  
 
     //按下一步跳pay2

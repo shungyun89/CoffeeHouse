@@ -8,9 +8,9 @@ function MemberDrinkO(props){
     const{auth}=props;
     const {dataCheck}=props;
     if(!auth){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member")
+      window.location.replace("https://house-coffee.vercel.app/member")
     }if(!dataCheck){
-      window.location.replace("https://coffee-house-46uj0eu28-shungyun89.vercel.app/member/NewData");
+      window.location.replace("https://house-coffee.vercel.app/member/NewData");
     }
     return(
         <>
