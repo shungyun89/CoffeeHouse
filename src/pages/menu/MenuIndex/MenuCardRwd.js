@@ -9,10 +9,10 @@ const MenuCardRwd = (props) => {
 
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
     
-    const thisURL=window.location.href
+    const thisURL=window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
-    if(thisURL=='https://house-coffee.vercel.app/onlinemenu'){
+    if(thisURL=='/onlinemenu'){
         return(
                 <>
                     {/* 印出資料 */}
@@ -54,7 +54,7 @@ const MenuCardRwd = (props) => {
                     })}
                 </>   
         ) 
-}else if(thisURL=='https://house-coffee.vercel.app/favorite'){
+}else if(thisURL=='/favorite'){
     return(
         <>
             {/* 印出資料 */}
@@ -97,7 +97,7 @@ const MenuCardRwd = (props) => {
         </>   
     ) 
 
-}else if(thisURL=='https://house-coffee.vercel.app/MenuTypeToday'){
+}else if(thisURL=='/MenuTypeToday'){
     return(
         <>
             {/* 印出資料 */}
@@ -140,7 +140,7 @@ const MenuCardRwd = (props) => {
         </>   
     ) 
 
-}else if(thisURL=='https://house-coffee.vercel.app/MenuTypeIce'){
+}else if(thisURL=='/MenuTypeIce'){
     return(
         <>
             {/* 印出資料 */}
@@ -182,7 +182,7 @@ const MenuCardRwd = (props) => {
             })}
         </>   
     ) 
-}else if(thisURL=='https://house-coffee.vercel.app/MenuTypeHot'){
+}else if(thisURL=='/MenuTypeHot'){
     return(
         <>
             {/* 印出資料 */}
