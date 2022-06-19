@@ -18,7 +18,7 @@ const MenuCardRwd = (props) => {
             pathname1 = pathname[i]
         }
     }
-    switch ('pathname1') {
+    switch (pathname1) {
         case '/favorite':
             return(
                 <>
