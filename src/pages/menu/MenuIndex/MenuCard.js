@@ -7,7 +7,6 @@ const MenuCard = (props) => {
     const {setdrinkId, setcss, datas, favdatas, todaydatas, icedatas, hotdatas} = props
     const {favpathname, todaypathname, icepathname, hotpathname, indexpathname} = props
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
-    
     const thisURL=window.location.pathname
     // 異步回調
     useEffect(() => {},[setdrinkId])
@@ -19,272 +18,267 @@ const MenuCard = (props) => {
         }
     }
 
-    if(thisURL=='/onlinemenu'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {datas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.url)
-                return(
-                    <div 
-                        className="card drinkCard" 
-                        type="button" 
-                        key={mu.id}  
-                    >
-                        <div>
+    switch(pathname1){
+        case '/favorite':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {favdatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
                             <div 
-                                className="imgdiv"
-                                onClick={()=>{
-                                    setdrinkId(mu.id)
-                                    setcss({
-                                        visibility: 'visible',
-                                        opacity:'1'
-                                    })
-                                }}
+                                className="card drinkCard" 
+                                type="button" 
+                                key={mu.id}  
                             >
-                                <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                <div>
+                                    <div 
+                                        className="imgdiv"
+                                        onClick={()=>{
+                                            setdrinkId((mu.id))
+                                            setcss({
+                                                visibility: 'visible',
+                                                opacity:'1'
+                                            })
+                                        }}
+                                    >
+                                        <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                    </div>
+                                    <div className="cardpa">
+                                        <span>{mu.drink_name}</span>
+                                        <Collect id={(mu.id)} i={i} mu={mu}/>
+                                    </div>
+                                    <div 
+                                        className="d-flex justify-content-between cardpading"
+                                        onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                    >
+                                        <span className="d-flex align-items-center">
+                                            ${mu.price}
+                                        </span>
+                                    </div>
+                                </div>    
                             </div>
-                            <div className="cardpa">
-                                <span>{mu.drink_name}</span>
-                                <Collect id={(mu.id)} i={i} mu={mu}/>
-                            </div>
+                        )
+                    })}
+                </>   
+            )  
+            break;
+        case '/MenuTypeToday':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {icedatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
                             <div 
-                                className="d-flex justify-content-between cardpading"
-                                onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
+                                className="card drinkCard" 
+                                type="button" 
+                                key={mu.id}  
                             >
-                                <span className="d-flex align-items-center">
-                                    ${mu.price}
-                                </span>
+                                <div>
+                                    <div 
+                                        className="imgdiv"
+                                        onClick={()=>{
+                                            setdrinkId((mu.id))
+                                            setcss({
+                                                visibility: 'visible',
+                                                opacity:'1'
+                                            })
+                                        }}
+                                    >
+                                        <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                    </div>
+                                    <div className="cardpa">
+                                        <span>{mu.drink_name}</span>
+                                        <Collect id={(mu.id)} i={i} mu={mu}/>
+                                    </div>
+                                    <div 
+                                        className="d-flex justify-content-between cardpading"
+                                        onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                    >
+                                        <span className="d-flex align-items-center">
+                                            ${mu.price}
+                                        </span>
+                                    </div>
+                                </div>    
                             </div>
-                        </div>    
-                    </div>
-                )
-            })}
-        </>   
-    )  
-}else if(thisURL=='/favorite'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {favdatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div 
-                        className="card drinkCard" 
-                        type="button" 
-                        key={mu.id}  
-                    >
-                        <div>
+                        )
+                    })}
+                </>   
+            )  
+        
+            break
+        case '/MenuTypeIce':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {icedatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
                             <div 
-                                className="imgdiv"
-                                onClick={()=>{
-                                    setdrinkId((mu.id))
-                                    setcss({
-                                        visibility: 'visible',
-                                        opacity:'1'
-                                    })
-                                }}
+                                className="card drinkCard" 
+                                type="button" 
+                                key={mu.id}  
                             >
-                                <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                <div>
+                                    <div 
+                                        className="imgdiv"
+                                        onClick={()=>{
+                                            setdrinkId((mu.id))
+                                            setcss({
+                                                visibility: 'visible',
+                                                opacity:'1'
+                                            })
+                                        }}
+                                    >
+                                        <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                    </div>
+                                    <div className="cardpa">
+                                        <span>{mu.drink_name}</span>
+                                        <Collect id={(mu.id)} i={i} mu={mu}/>
+                                    </div>
+                                    <div 
+                                        className="d-flex justify-content-between cardpading"
+                                        onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                    >
+                                        <span className="d-flex align-items-center">
+                                            ${mu.price}
+                                        </span>
+                                    </div>
+                                </div>    
                             </div>
-                            <div className="cardpa">
-                                <span>{mu.drink_name}</span>
-                                <Collect id={(mu.id)} i={i} mu={mu}/>
-                            </div>
+                        )
+                    })}
+                </>   
+            )  
+        
+        
+        
+            break
+        case '/MenuTypeHot':
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {hotdatas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.drink_name)
+                        return(
                             <div 
-                                className="d-flex justify-content-between cardpading"
-                                onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
+                                className="card drinkCard" 
+                                type="button" 
+                                key={mu.id}  
                             >
-                                <span className="d-flex align-items-center">
-                                    ${mu.price}
-                                </span>
+                                <div>
+                                    <div 
+                                        className="imgdiv"
+                                        onClick={()=>{
+                                            setdrinkId((mu.id))
+                                            setcss({
+                                                visibility: 'visible',
+                                                opacity:'1'
+                                            })
+                                        }}
+                                    >
+                                        <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                    </div>
+                                    <div className="cardpa">
+                                        <span>{mu.drink_name}</span>
+                                        <Collect id={(mu.id)} i={i} mu={mu}/>
+                                    </div>
+                                    <div 
+                                        className="d-flex justify-content-between cardpading"
+                                        onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                    >
+                                        <span className="d-flex align-items-center">
+                                            ${mu.price}
+                                        </span>
+                                    </div>
+                                </div>    
                             </div>
-                        </div>    
-                    </div>
-                )
-            })}
-        </>   
-    )  
-}else if(thisURL=='/MenuTypeToday'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {todaydatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div 
-                        className="card drinkCard" 
-                        type="button" 
-                        key={mu.id}  
-                    >
-                        <div>
+                        )
+                    })}
+                </>   
+            )  
+        break    
+        default:
+            return(
+                <>
+                    {/* 印出資料 */}
+                    {datas.map((mu,i)=>{
+                        // 儲存圖片路徑
+                        const img1 = (mu.url)
+                        return(
                             <div 
-                                className="imgdiv"
-                                onClick={()=>{
-                                    setdrinkId((mu.id))
-                                    setcss({
-                                        visibility: 'visible',
-                                        opacity:'1'
-                                    })
-                                }}
+                                className="card drinkCard" 
+                                type="button" 
+                                key={mu.id}  
                             >
-                                <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                <div>
+                                    <div 
+                                        className="imgdiv"
+                                        onClick={()=>{
+                                            setdrinkId(mu.id)
+                                            setcss({
+                                                visibility: 'visible',
+                                                opacity:'1'
+                                            })
+                                        }}
+                                    >
+                                        <img src={require('../img/'+ img1 +'.jpg')} alt="" />
+                                    </div>
+                                    <div className="cardpa">
+                                        <span>{mu.drink_name}</span>
+                                        <Collect id={(mu.id)} i={i} mu={mu}/>
+                                    </div>
+                                    <div 
+                                        className="d-flex justify-content-between cardpading"
+                                        onClick={()=>{
+                                        setdrinkId((mu.id))
+                                        setcss({
+                                            visibility: 'visible',
+                                            opacity:'1'
+                                        })
+                                    }}
+                                    >
+                                        <span className="d-flex align-items-center">
+                                            ${mu.price}
+                                        </span>
+                                    </div>
+                                </div>    
                             </div>
-                            <div className="cardpa">
-                                <span>{mu.drink_name}</span>
-                                <Collect id={(mu.id)} i={i} mu={mu}/>
-                            </div>
-                            <div 
-                                className="d-flex justify-content-between cardpading"
-                                onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                            >
-                                <span className="d-flex align-items-center">
-                                    ${mu.price}
-                                </span>
-                            </div>
-                        </div>    
-                    </div>
-                )
-            })}
-        </>   
-    )  
-
-
-
-}else if(thisURL=='/MenuTypeIce'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {icedatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div 
-                        className="card drinkCard" 
-                        type="button" 
-                        key={mu.id}  
-                    >
-                        <div>
-                            <div 
-                                className="imgdiv"
-                                onClick={()=>{
-                                    setdrinkId((mu.id))
-                                    setcss({
-                                        visibility: 'visible',
-                                        opacity:'1'
-                                    })
-                                }}
-                            >
-                                <img src={require('../img/'+ img1 +'.jpg')} alt="" />
-                            </div>
-                            <div className="cardpa">
-                                <span>{mu.drink_name}</span>
-                                <Collect id={(mu.id)} i={i} mu={mu}/>
-                            </div>
-                            <div 
-                                className="d-flex justify-content-between cardpading"
-                                onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                            >
-                                <span className="d-flex align-items-center">
-                                    ${mu.price}
-                                </span>
-                            </div>
-                        </div>    
-                    </div>
-                )
-            })}
-        </>   
-    )  
-
-
-
-}else if(thisURL=='/MenuTypeHot'){
-    return(
-        <>
-            {/* 印出資料 */}
-            {hotdatas.map((mu,i)=>{
-                // 儲存圖片路徑
-                const img1 = (mu.drink_name)
-                return(
-                    <div 
-                        className="card drinkCard" 
-                        type="button" 
-                        key={mu.id}  
-                    >
-                        <div>
-                            <div 
-                                className="imgdiv"
-                                onClick={()=>{
-                                    setdrinkId((mu.id))
-                                    setcss({
-                                        visibility: 'visible',
-                                        opacity:'1'
-                                    })
-                                }}
-                            >
-                                <img src={require('../img/'+ img1 +'.jpg')} alt="" />
-                            </div>
-                            <div className="cardpa">
-                                <span>{mu.drink_name}</span>
-                                <Collect id={(mu.id)} i={i} mu={mu}/>
-                            </div>
-                            <div 
-                                className="d-flex justify-content-between cardpading"
-                                onClick={()=>{
-                                setdrinkId((mu.id))
-                                setcss({
-                                    visibility: 'visible',
-                                    opacity:'1'
-                                })
-                            }}
-                            >
-                                <span className="d-flex align-items-center">
-                                    ${mu.price}
-                                </span>
-                            </div>
-                        </div>    
-                    </div>
-                )
-            })}
-        </>   
-    )  
-}
-
-
-
-
-
-
-
-
-
+                        )
+                    })}
+                </>   
+            )  
+        break
+        }
 
 
 }
