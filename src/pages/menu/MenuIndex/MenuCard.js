@@ -5,7 +5,7 @@ import Collect from "../component/Collect";
 const MenuCard = (props) => {
     // 傳遞點擊id    // 接收父層資料
     const {setdrinkId, setcss, datas, favdatas, todaydatas, icedatas, hotdatas} = props
-
+    const {favpathname, todaypathname, icepathname, hotpathname, indexpathname} = props
     const localFavDatas = JSON.parse(localStorage.getItem('favourite'))
     
     const thisURL=window.location.pathname
