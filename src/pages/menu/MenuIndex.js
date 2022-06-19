@@ -14,6 +14,7 @@ const MenuIndex = () => {
         const [css,setcss] = useState()
         //從後端抓資料
         const [datas, setDatas ] = useState([])
+        const [indexpathname, setindexpathname] = useState(window.location.pathname)
         const fetchData = async()=>{
                             const response = await fetch('https://house-coffee-backend.herokuapp.com/menu');
                             const results = await response.json();         
@@ -21,8 +22,8 @@ const MenuIndex = () => {
         }
         useEffect(()=>{fetchData();},[])
         const datas1 = JSON.parse(localStorage.getItem('gifts'))
-
-        const indexpathname = window.location.pathname 
+        
+        console.log();
         return( 
             <>   
                 <div className="bodyMenu">
