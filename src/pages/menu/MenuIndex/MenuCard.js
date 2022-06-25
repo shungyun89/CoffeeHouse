@@ -74,7 +74,7 @@ const MenuCard = (props) => {
             return(
                 <>
                     {/* 印出資料 */}
-                    {icedatas.map((mu,i)=>{
+                    {todaydatas.map((mu,i)=>{
                         // 儲存圖片路徑
                         const img1 = (mu.drink_name)
                         return(

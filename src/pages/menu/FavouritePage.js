@@ -37,7 +37,9 @@ const FavouritePage = () => {
         return( 
             <>   
                 <div className="bodyMenu">
-                <MenuAside/>
+                <MenuAside
+                    favpathname={favpathname}
+                />
                     <div className="main2">
                         <div className="mainBody">
                             <MenuCard 

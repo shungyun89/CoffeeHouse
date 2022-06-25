@@ -32,7 +32,9 @@ const MenuTypeToday = () => {
         return( 
             <>   
                 <div className="bodyMenu">
-                <MenuAside/>
+                <MenuAside
+                    todaypathname={todaypathname}
+                />
                     <div className="main2">
                         <div className="mainBody">
                             <MenuCard 

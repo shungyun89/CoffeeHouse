@@ -32,7 +32,9 @@ const MenuTypeIce = () => {
         return( 
             <>   
                 <div className="bodyMenu">
-                <MenuAside/>
+                <MenuAside
+                    icepathname={icepathname}
+                />
                     <div className="main2">
                         <div className="mainBody">
                             <MenuCard 

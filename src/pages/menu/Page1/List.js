@@ -8,6 +8,8 @@ const List = (props) => {
     const datas1 = JSON.parse(localStorage.getItem('gifts'))
     const [datasNEW, setdatasNEW] = useState(datas1)
     const [totalPrice1, settotalPrice1] = useState()
+    const [topri, settopri] = useState()
+    
     // 接收資料庫資料
     const {datas,totalprice,settotalprice} = props 
     // 計算datas的長度
@@ -75,13 +77,14 @@ const List = (props) => {
                                         localStorage.setItem("gifts", JSON.stringify(datasNEW))
                                         const datas222 = JSON.parse(localStorage.getItem('gifts'))
                                         setdatasNEW(datas222)
+                                        settopri(total*price)
                                     }}
                                 >
                                     刪除
                                 </div>
                             </div>
                             <div className="price">
-                                {total*price}               
+                                {total*price}            
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,9 @@ const MenuTypeHot = () => {
         return( 
             <>   
                 <div className="bodyMenu">
-                <MenuAside/>
+                <MenuAside
+                    hotpathname={hotpathname}
+                />
                     <div className="main2">
                         <div className="mainBody">
                             <MenuCard 

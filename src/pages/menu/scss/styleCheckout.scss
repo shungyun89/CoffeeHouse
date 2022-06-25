@@ -1,13 +1,14 @@
 $colorMain: #E4D2A3;
 $colorMain2: #7D704D;
 $colorMain3: #A37025;
+
 // 空白
 .spaceTop {
-  margin-bottom:2em;
+    margin-bottom: 2em;
 }
 
-.spaceTop2{
-  margin-top:5em;
+.spaceTop2 {
+    margin-top: 5em;
 }
 
 .checkOut {
@@ -15,16 +16,15 @@ $colorMain3: #A37025;
     justify-content: center;
 }
 
-
 // 流程圖
-
 .process {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.processRWD{
-  display: none;
+
+.processRWD {
+    display: none;
 }
 
 .processIn {
@@ -54,60 +54,62 @@ $colorMain3: #A37025;
     margin-top: 13px;
 }
 
-.processInBoxwhite{
-  color: white;
+.processInBoxwhite {
+    color: white;
 }
 
 .processInBoxColor {
-  color: $colorMain3;
+    color: $colorMain3;
 }
 
 .processInBoxNum {
-  display: none;
+    display: none;
 }
 
-.check2{
-  color: #000;
-  opacity:  0.25;
+.check2 {
+    color: #000;
+    opacity: 0.25;
 }
 
 //流程圖RWD
 
 @media (max-width:1024px) {
-  .processInBox {
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    background-color: $colorMain3;
-    border: #000 1px solid 0.25;
-    .check1{
-      display: none;
+    .processInBox {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        background-color: $colorMain3;
+        border: #000 1px solid 0.25;
+
+        .check1 {
+            display: none;
+        }
     }
-  }
 
-  .processInBoxNum {
-    display: block;
-    color: white;
-  }
+    .processInBoxNum {
+        display: block;
+        color: white;
+    }
 
-  .processInBoxLine {
-    height: 1px;
-    margin-bottom: 5px;
-    margin-top: 15px;
-    background-color: black;
-    opacity: 0.25;
-  }
+    .processInBoxLine {
+        height: 1px;
+        margin-bottom: 5px;
+        margin-top: 15px;
+        background-color: black;
+        opacity: 0.25;
+    }
 
-  .processRWD{
-    display: flex;
-  }
+    .processRWD {
+        display: flex;
+    }
 
-  .processRWDcenter{
-    white-space:nowrap;
-  }
-  .processIn {
-    width: 100%;
-  }
+    .processRWDcenter {
+        white-space: nowrap;
+    }
+
+    .processIn {
+        width: 100%;
+    }
 }
 
 
@@ -138,7 +140,9 @@ $colorMain3: #A37025;
 
 }
 
-.quantityText ,.buttonLeft ,.buttonRight {
+.quantityText,
+.buttonLeft,
+.buttonRight {
     display: flex;
     align-items: center;
 }
@@ -152,123 +156,136 @@ $colorMain3: #A37025;
 }
 
 .nameRotate {
-  width:40%;
-  display: flex;
+    width: 40%;
+    display: flex;
 }
 
 .deletestyle {
     text-decoration: none;
     border: #E4D2A3 1px solid;
     letter-spacing: 2px;
+
     span {
-      color: black;
+        color: black;
     }
-    &:hover{
-      background-color: #E4D2A3;
-    }
-  } 
 
-.trash{
+    &:hover {
+        background-color: #E4D2A3;
+    }
+}
+
+.trash {
     display: none;
-  }
+}
 
-  // list RWD
-    
-  @media (max-width:625px) {
+// list RWD
+
+@media (max-width:625px) {
     .listBody {
-      margin: 0 30px 0 px;
+        margin: 0 30px 0 px;
     }
-  }
-  @media (max-width:1024px) {
+}
+
+@media (max-width:1024px) {
     .listBody {
-      // margin: 0 30px;
         input {
             width: 5rem;
         }
-  }
-  .listImg {
-      width: 6em;
-      height: 6em;
-      padding: 0;
-  }
+    }
 
-  .nameRotate{
-    flex-direction: column;
-    padding-left: 2em;
-    width: 8em;
-  }
+    .listImg {
+        width: 6em;
+        height: 6em;
+        padding: 0;
+    }
 
-  .amount {
-    display: none;
-  }
-  .quantityText {
-    display: none;
-  }
-  .delete {
-    display: none;
-  }
-  .numButton {
-    border-radius: 0;
-    border: 0;
-  }
-  .quantity {
-    border: 0;
-  }
-  .buttonLeft {
-    border-radius: 5px;
-    color: white;
-    background-color: $colorMain;
-    border: 0;
-  }
-  .buttonRight {
-    border-radius: 5px;
-    color: white;
-    background-color: $colorMain;
-    border: 0;
-  }
-  .price {
-    display: block;
-  }
+    .nameRotate {
+        flex-direction: column;
+        padding-left: 2em;
+        width: 8em;
+    }
 
-  .coffeeName {
-    width: 8em;
-    padding-bottom: 10px;
-  }
-  .trash {
-    display: block;
-  }
-  .check2{
-    display: none;
-  }
-  }
+    .amount {
+        display: none;
+    }
+
+    .quantityText {
+        display: none;
+    }
+
+    .delete {
+        display: none;
+    }
+
+    .numButton {
+        border-radius: 0;
+        border: 0;
+    }
+
+    .quantity {
+        border: 0;
+    }
+
+    .buttonLeft {
+        border-radius: 5px;
+        color: white;
+        background-color: $colorMain;
+        border: 0;
+    }
+
+    .buttonRight {
+        border-radius: 5px;
+        color: white;
+        background-color: $colorMain;
+        border: 0;
+    }
+
+    .price {
+        display: block;
+    }
+
+    .coffeeName {
+        width: 8em;
+        padding-bottom: 10px;
+    }
+
+    .trash {
+        display: block;
+    }
+
+    .check2 {
+        display: none;
+    }
+}
 
 
 
 // 優惠列表
 
-.Promo{
-  display: flex;
-  justify-content: end;
+.Promo {
+    display: flex;
+    justify-content: end;
 }
 
-.btn-outline-secondary{
+.btn-outline-secondary {
     background: white;
     border: 1px solid #e4d2a3;
     color: #e4d2a3;
     padding: 0px 5px 0 5px;
 
-  }
-  
-  // 商品小計
+}
+
+// 商品小計
 
 .subtotal {
     margin-top: 2em;
     margin-bottom: 2em;
     display: flex;
     justify-content: end;
-    h4{
-      display: flex;
-      justify-content: end;
+
+    h4 {
+        display: flex;
+        justify-content: end;
     }
 }
 
@@ -294,7 +311,7 @@ $colorMain3: #A37025;
     border-radius: 10px;
     width: 7rem;
     margin-bottom: 2em;
-    color: 	$colorMain2;
+    color: $colorMain2;
     display: flex;
     justify-content: center;
     background-color: white;
@@ -302,8 +319,8 @@ $colorMain3: #A37025;
 
 
 .payfun {
-  display: flex;
-  justify-content: end;
+    display: flex;
+    justify-content: end;
 }
 
 .dropdownbig {
@@ -316,11 +333,16 @@ $colorMain3: #A37025;
     outline: none;
     transition: all 0.2s
 }
+
+#demo-simple-select-autowidth-label {
+    &::before {
+        display: none;
+    }
+}
+
 @media (max-width:1024px) {
     .dropdownbig {
         width: 100%;
     }
 
 }
-
-

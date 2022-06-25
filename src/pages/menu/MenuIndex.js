@@ -23,11 +23,12 @@ const MenuIndex = () => {
         useEffect(()=>{fetchData();},[])
         const datas1 = JSON.parse(localStorage.getItem('gifts'))
         
-        console.log();
-        return( 
+        return(  
             <>   
                 <div className="bodyMenu">
-                <MenuAside/>
+                <MenuAside
+                    indexpathname={indexpathname}
+                />
                     <div className="main2">
                         <div className="mainBody">
                             <MenuCard 
@@ -54,7 +55,7 @@ const MenuIndex = () => {
                         to='/OnlineCheckPage' 
                         className="shopping" 
                         onClick={()=>{
-                            if(datas1 == null ){
+                            if(datas1 === null ){
                                 localStorage.setItem("gifts", JSON.stringify([]))
                             }
                         }}

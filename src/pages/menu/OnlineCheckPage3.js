@@ -14,11 +14,6 @@ import Totalpay from "./Page3/Totalpay";
 
 const OnlineCheckPage3 = () => {
 
-
-
- 
-
-
     return(
             <>
                 <Space />
@@ -29,11 +24,7 @@ const OnlineCheckPage3 = () => {
                 <Buyer />
                 <Totalpay />
             </>
-
-
-
-
-)
+    )
 
 }
 
