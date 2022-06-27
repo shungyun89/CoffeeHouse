@@ -9,6 +9,8 @@ const List = (props) => {
     const [datasNEW, setdatasNEW] = useState(datas1)
     const [totalPrice1, settotalPrice1] = useState()
     const [topri, settopri] = useState()
+    console.log('datas1',datas1);
+    console.log();
     
     // 接收資料庫資料
     const {datas,totalprice,settotalprice} = props 
@@ -35,6 +37,8 @@ const List = (props) => {
                 const menuimg = (to.drink_name)
                 const total = datas1[i].drinkCounter
                 const price = to.price
+
+                console.log(total);
                 all = all+(total*price)
                 settotalprice(all)
                 return(
@@ -84,7 +88,8 @@ const List = (props) => {
                                 </div>
                             </div>
                             <div className="price">
-                                {total*price}            
+                                {/* {(totalPrice1===undefined) ? {totalPrice} : {totalPrice1} } */}
+                                {total*price}   
                             </div>
                         </div>
                     </div>
