@@ -77,10 +77,10 @@ const List = (props) => {
                                     className='btn deletebtn' 
                                     herf="/"
                                     onClick={()=>{ 
-                                        datasNEW.splice(i,1)
-                                        localStorage.setItem("gifts", JSON.stringify(datasNEW))
-                                        const datas222 = JSON.parse(localStorage.getItem('gifts'))
-                                        setdatasNEW(datas222)
+                                        const datas1 = JSON.parse(localStorage.getItem('gifts'))
+                                        datas1.splice(i,1)
+                                        localStorage.setItem("gifts", JSON.stringify(datas1))
+                                        setdatasNEW(datas1)
                                         settopri(total*price)
                                     }}
                                 >
@@ -88,7 +88,6 @@ const List = (props) => {
                                 </div>
                             </div>
                             <div className="price">
-                                {/* {(totalPrice1===undefined) ? {totalPrice} : {totalPrice1} } */}
                                 {total*price}   
                             </div>
                         </div>
