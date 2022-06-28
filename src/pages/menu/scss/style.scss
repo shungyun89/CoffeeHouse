@@ -98,18 +98,20 @@ $colorMain3: #A37025;
         display: flex;
         width: 100%;
         flex-direction: column;
-        margin: 0 30px;
+        padding: 0 30px;
 
         ul {
-            width: 20rem;
+            margin-top: 2rem;
+            width: auto;
             overflow: hidden;
             display: flex;
             justify-content: space-between;
             overflow-x: auto;
 
-            &::-webkit-scrollbar {
-                display: none;
-            }
+            // for mobile
+            // &::-webkit-scrollbar {
+            //     display: none;
+            // }
 
             li {
                 width: 8rem;
@@ -131,7 +133,7 @@ $colorMain3: #A37025;
 
 // card
 .drinkCard {
-    margin: 2em;
+    margin: 1rem;
     border: 0;
     text-decoration: none;
 
@@ -551,10 +553,24 @@ a {
 }
 
 @media screen and (max-width: 700px) {
+    .popoimg {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .popupName h2 {
+        padding-left: 5px;
+    }
+
+    .popupNameTop {
+        padding-right: 2rem;
+    }
+
     .menuPopup {
         width: auto;
         margin-left: 30px;
         margin-right: 30px;
+        margin-top: 8rem;
     }
 
     .menuContent {
@@ -584,5 +600,12 @@ a {
 
     &:hover {
         color: #eee;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .shopping {
+        bottom: 30px;
+        right: 20px;
     }
 }

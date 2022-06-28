@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {Link} from "react-router-dom";
 import Dropdown from "../component/Dropdown ";
 
@@ -10,11 +11,18 @@ const Pay = (props) => {
         }
         localStorage.setItem("updateprices", JSON.stringify(updateprice))
     }
+    const [payState, setpayState] = useState()
+    // const aa =()=>{
+    //     if(payState===undefined){document.getElementsByClassName('Dropdownwrong').innerHTML="請選擇付款方式"
+    //     }else{updateprice()}
+    // } 
+
     return (
         <div className="list">
             <div className="Promo">
                 <div className="Payment">
-                    <Dropdown/>
+                    <Dropdown setpayState={setpayState}/>
+                    <p className='Dropdownwrong'></p>
                 </div>
             </div>
             <div className="subtotal">
@@ -32,7 +40,12 @@ const Pay = (props) => {
                     </Link>
                 </div>
                 <div className="d-flex justify-content-end">
-                    <Link to="/OnlineCheckPage2" onClick={updateprice}>
+                    <Link 
+                        to="/OnlineCheckPage2" 
+                        onClick={
+                            updateprice()
+                        }
+                    >
                         <div className="btn PaymentLast">
                             結帳
                         </div>

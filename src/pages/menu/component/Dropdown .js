@@ -8,10 +8,12 @@ import Select from '@mui/material/Select';
 
 
 
-const Dropdown = () => {
+const Dropdown = (props) => {
+    const {setpayState} = props
     const [pay, setpay] = React.useState('');
     const handleChange = (event) => {
       setpay(event.target.value);
+      setpayState(event.target.value)
     };
     return(
     <>
