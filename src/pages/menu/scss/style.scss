@@ -21,6 +21,13 @@ $colorMain3: #A37025;
     }
 }
 
+@media screen and (max-width: 945px) {
+    .mainBody {
+        justify-content: center;
+    }
+
+}
+
 // aside
 .main1 {
     width: 23%;
@@ -44,6 +51,10 @@ $colorMain3: #A37025;
     margin: auto;
 }
 
+.mobileMenuAside {
+    display: none;
+}
+
 .asideMenu {
     ul {
         list-style: none;
@@ -65,6 +76,58 @@ $colorMain3: #A37025;
     }
 }
 
+@media screen and (max-width: 800px) {
+    .bodyMenu {
+        flex-wrap: wrap;
+    }
+
+    .listBody {
+        display: flex;
+        margin: 2em 0;
+    }
+
+    .webmenuaside {
+        display: none;
+    }
+
+    .main1 {
+        width: 100%;
+    }
+
+    .mobileMenuAside {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 0 30px;
+
+        ul {
+            width: 20rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                width: 8rem;
+                padding: 1px;
+                border: 1px solid $colorMain;
+                display: flex;
+                justify-content: center;
+            }
+
+            li a {
+                display: inline;
+                margin-left: 5rem;
+
+            }
+        }
+    }
+
+}
 
 // card
 .drinkCard {
@@ -105,17 +168,6 @@ $colorMain3: #A37025;
 
 .listBody {
     display: none;
-}
-
-@media (max-width:800px) {
-    .asideMenu {
-        display: none;
-    }
-
-    .listBody {
-        display: flex;
-        margin: 2em 0;
-    }
 }
 
 .listconuter1 {
@@ -218,6 +270,11 @@ $colorMain3: #A37025;
 
     .card {
         width: 100%;
+    }
+
+    .cardRwd {
+        border: 1px solid $colorMain;
+        padding: 1rem;
     }
 
     .main2 {
@@ -387,11 +444,6 @@ a {
 .menuPopup .close:hover {
     color: $colorMain;
 }
-
-
-// .popoimgbody{
-//     width: 100%;
-// }
 
 .popoimg {
     width: 10rem;

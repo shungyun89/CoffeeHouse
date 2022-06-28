@@ -38,6 +38,28 @@ const MenuAside = (props) => {
                     </a>
                 </ul>
             </aside>
+            <aside className="mobileMenuAside">
+                <div className="onlionMob">
+                    <span>線上訂餐</span>
+                </div>
+                <ul>
+                    <a href="/onlinemenu">
+                        <li style={(pathname1==='/onlinemenu')?hoverCss:{}}>全部</li>
+                    </a>
+                    <a href="/MenuTypeToday">
+                        <li style={(pathname1==='/MenuTypeToday')?hoverCss:{}}>每日精選咖啡</li>
+                        </a>
+                    <a href="/MenuTypeIce">
+                        <li style={(pathname1==='/MenuTypeIce')?hoverCss:{}}>冰飲咖啡</li>
+                        </a>
+                    <a href="/MenuTypeHot">
+                        <li style={(pathname1==='/MenuTypeHot')?hoverCss:{}}>熱飲咖啡</li>
+                        </a>
+                    <a href="/favorite">
+                        <li style={(pathname1==='/favorite')?hoverCss:{}}>我的最愛</li>
+                    </a>
+                </ul>
+            </aside>
         </div>
     )
 
