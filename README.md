@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# 好室咖啡 HouseCoffee
+![1655537428782](https://user-images.githubusercontent.com/16550299/174427766-dd8568e2-72e6-47ea-9d70-52ff791d9d72.jpeg)  
+*簡報封面  
+貓咪繪圖者：朱韻婷  
+封面及PPT設計製作：徐仁婕  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 資展國際前端班125期末專題製作  
 
-## Available Scripts
 
-In the project directory, you can run:
+組別：第三組  
 
-### `yarn start`
+主題：好事咖啡 House Coffee  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+組員 / 負責項目 / 擔任職務：  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+FR12503 王士銘 / 文章 / 提供咖啡專業知識  
+FR12506 陳聖允 / 訂餐 / 副技術長  
+FR12511 朱韻婷 / 商品 / UIUX視覺設計、品牌設計  
+FR12514 張嘉銘 / 會員 / 組長、技術長  
+FR12516 張伊汶 / 門市 / 副組長、副技術長  
+FR12519 徐仁婕 / 首頁 / UIUX視覺設計、PPT製作  
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 使用工具及語言
+繪圖設計
+- Figma
+- Photoshop
+- Illustrator
+  
+版本管理
+- Git 
+- GitHub Desktop 
 
-### `yarn build`
+前台頁面  
+- 前端：HTML、CSS3、JS API、JavaScript ES6+、Bootstrap5、jQuery、SCSS/SASS 
+- 框架：React.js 18
+- npm套件及API：Sweetalert、Social Share、Google Map Api、綠界金流  
+- 後端：node.js  
+- 資料庫：MySQL 
+- 伺服器：localhost、Heroku  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+後台頁面  
+- 前端：HTML、CSS3、JS API、JavaScript ES6+、Bootstrap5、jQuery、SCSS/SASS  
+- 後端：php  
+- 資料庫：MySQL  
+- 伺服器：xampp  
+  
+## 專案特色
+- 版面為純手刻
+- 專屬LOGO
+- 線上點餐免登入
+- 會員優惠券及紅利點數
+  
+## 開發過程中學習  
+- Figma繪製版面
+- ajax 與 HTTP 基本協定，利用 GET 與 POST 向後端請求資料，並了解兩者差異  
+- 表單驗證設計及其重要性  
+- 資料庫正規化  
+- 出錯時如何運用開發者模式找尋錯誤並解決  
+- npm套件的使用 
